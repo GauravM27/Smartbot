@@ -15,7 +15,7 @@
     button{
       display:block;
       background:inherit;
-      border: 1px solid #fafcfb;
+      border: 1px solid #fcfcfa;
       border-radius: 5px;
       color:#fff;
       padding:13px;
@@ -28,10 +28,13 @@
     }
 
     #sidebar{
-      background: #171f1b;
+      background: #0f0f0e;
       width: 300px;
       padding:8px;
       box-sizing:border-box;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
     }
     
     .slidecontrol{
@@ -41,10 +44,34 @@
     .newchat{
       flex:1;
     }
-    
 
-    
-    
+    .conversations,conversations li{
+      list-style:none;
+      list-style-type:none;
+      padding:0;
+      margin:0;
+    }
+    .conversations li{
+      position:relative;
+    }
+    .edit-buttons{
+      display:none;
+      position:absolute;
+      right:8px;
+      top:0;
+    }
+    .conversations li:hover .edit-buttons{
+      display:flex;
+    }
+    .conversations li>button{
+      width:100%;
+      border:none;
+    }
+    .edit-buttons button{
+      border:none;
+      padding:0;
+      margin:13px 5px 13px 5px
+    }
   </style>
   
   <title>Document</title>
@@ -56,6 +83,29 @@
       <button class="newchat">New Chat</button>
       <button class="hideslide">X</button>
     </div>
+    <ul class ="conversations">
+      <li>
+        <button>This is a conversation title</button>
+        <div class="edit-buttons">
+          <button>E</button>
+          <button>X</button>          
+        </div>
+      </li>
+      <li>
+        <button>This is a conversation title</button>
+        <div class="edit-buttons">
+          <button>E</button>
+          <button>X</button>          
+        </div>
+      </li>
+      <li>
+        <button>This is a conversation title</button>
+        <div class="edit-buttons">
+          <button>E</button>
+          <button>X</button>          
+        </div>
+      </li>
+    </ul>
   </nav>
   <main>
     
