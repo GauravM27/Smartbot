@@ -72,6 +72,31 @@
       padding:0;
       margin:13px 5px 13px 5px
     }
+
+    #message-form{
+      text-align:center;
+    }
+    .disclaimer{
+      color:#a6a697;
+      font-size:1em;
+    }
+    #message{
+      background:#b3b389;
+      border-radius:8px;
+      width:100%;
+      box-sizing:border-box;
+    }
+    main{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-content:center;
+      justify-content:flex-end;
+      padding:0px 30px 30px 30px;
+      box-sizing:border-box;
+    }
+    
+    
   </style>
   
   <title>Document</title>
@@ -108,7 +133,12 @@
     </ul>
   </nav>
   <main>
-    
+    <div id="message-form">
+      <textarea id="message" placeholder="send a message"></textarea>
+      <i>SEND</i>
+      <div class="disclaimer">This is clone</div>
+      
+    </div>
   </main>
 </body>
 </html>
