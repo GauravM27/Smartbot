@@ -113,7 +113,7 @@
     .send-btn{
       position:absolute;
       right:90px;
-      transform:translateY(99%);
+      transform:translateY(0%);
       ;
       
     }
@@ -157,13 +157,11 @@
   </nav>
   <main>
     <div id="message-form">
-      <div class="message-wrapper">
-        <textarea id="message" placeholder="send a message"></textarea>
-        <i class="send-btn">SEND</i>
-      </div>
+      <textarea id="message" placeholder="send a message"></textarea>
+      <i class="send-btn">SEND</i>
       <div class="disclaimer">This is clone</div>
       
     </div>
-  </main>  
+  </main>
 </body>
 </html>
