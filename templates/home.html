@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <style>
     html, body {
       height:100%;
@@ -44,7 +45,7 @@
     .newchat{
       flex:1;
     }
-
+    
     .conversations,conversations li{
       list-style:none;
       list-style-type:none;
@@ -73,6 +74,103 @@
       margin:13px 5px 13px 5px
     }
 
+    .model-selector {
+        position: relative;
+        border-radius: 11px;
+        background:#2d2d30;
+        display: flex;
+        padding: 4px;
+        gap: 4px;
+        margin: 24px auto;
+        z-index: 2;
+    }
+
+    .model-selector > button {
+        border-radius: 9px;
+        text-align: center;
+        width: 150px;
+        border: none;
+        font-weight: bold;
+        opacity: 0.5;
+    }
+
+    .model-selector > button:hover {
+        background: none;
+        opacity: 1;
+    }
+
+    .model-selector > button.selected {
+        border: 1px solid #fff ;
+        background: #45434d;
+        opacity: 1;
+    }
+
+    .model-selector button .fa {
+        margin-right: 5px;
+    }
+
+    .gpt-3 .fa {
+        color: var(--color-gpt3);
+    }
+
+    .gpt-4 .fa {
+        color: var(--color-gpt4);
+    }
+
+    .model-info {
+        display: none;
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        transform: translateY(100%);
+        padding: 15px;
+        cursor: default;
+    }
+
+    .model-info-box {
+        padding: 20px 20px 10px 20px;
+        border-radius: 15px;
+        background: var(--color-secondary);
+        color: var(--color-white);
+        text-align: left;
+    }
+
+    .model-selector > button:hover .model-info {
+        display: block;
+    }
+
+    .model-selector p {
+        font-size: 1.1em;
+        margin: 0 0 15px 0;
+    }
+
+    p.secondary {
+        font-size: 1em;
+        color: var(--color-secondary-p);
+    }
+
+    .logo {
+        position: relative;
+        z-index: 1;
+        color: #595952;
+        font-weight: bold;
+        text-align: center;
+        font-size: 2.3em;
+    }
+
+    .view.conversation-view {
+        display: none;
+        overflow-y: auto;
+    }
+
+    .model-name {
+        background: var(--color-main);
+        text-align: center;
+        color: var(--color-model-name);
+        padding: 23px;
+        border-bottom: 1px solid var(--color-border2);
+        font-size: 0.85em;
+    }
     #message-form{
       text-align:center;
     }
@@ -106,13 +204,13 @@
       display:flex;
       flex-direction:column;
       align-content:center;
-      justify-content:flex-end;
+      justify-content:space-between;
       padding:0px 60px 30px 60px;
       box-sizing:border-box;
     }
     .send-btn{
       position:absolute;
-      right:90px;
+      right:35px;
       transform:translateY(99%);
       ;
       
@@ -156,6 +254,33 @@
     </ul>
   </nav>
   <main>
+    <div class="model-selector">
+        <button class="gpt-3 selected">
+            <i class="fa fa-bolt"></i> GPT-3.5
+            <div class="model-info">
+                <div class="model-info-box">
+                    <p>Our fastest model, great for most every day tasks.</p>
+
+                    <p class="secondary">Available to Free and Plus users</p>
+                </div>
+            </div>
+        </button>
+        <button class="gpt-4">
+            <i class="fa fa-wand-magic-sparkles"></i> GPT-4
+            <div class="model-info">
+                <div class="model-info-box">
+                    <p>Our most capable model, great for creative stuff.</p>
+
+                    <p class="secondary">Available for Plus users.</p>
+                </div>
+            </div>
+        </button>
+    </div>
+    <div class="logo">
+            Smart-BOT  
+        </div>
+    </div>
+
     <div id="message-form">
       <div class="message-wrapper">
         <textarea id="message" placeholder="send a message"></textarea>
